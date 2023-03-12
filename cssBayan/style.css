@@ -91,6 +91,15 @@ h1{
         .accordion-item:hover .accordion-item__img {
             display: block;
         }
+        .accordion-item{
+            color: rgb(0, 0, 255);
+        }
+        .accordion:hover{
+            color: black;
+        }
+        .accordion-item:active{
+            color: rgb(0, 0, 255);
+        }
     }
 }
 
@@ -104,6 +113,24 @@ h1{
     }
     label {
         cursor: pointer;
+    }
+    .accordion-item {
+        color: rgb(0, 0, 255);
+    }
+
+    .accordion:hover .accordion-item{
+        color: black;
+    }
+
+    
+    label:active{
+        opacity: .5;
+    }
+    label:active .accordion-item__title .title-text{
+        color: rgb(0, 0, 255);
+    }
+    .accordion-item__input:checked + .accordion-item__title{
+        color: black;
     }
 
     .accordion-item:hover .accordion-item__img {
