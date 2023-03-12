@@ -1,0 +1,160 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #eecdb3;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+h1{
+    text-align: center;
+}
+
+.accordion{
+    max-width: 95vw;
+    margin: auto;
+}
+
+.accordion-item{
+    border: .1rem solid #535353;
+    margin-bottom: .8rem;
+}
+
+.accordion-item__input{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 0;
+    height: 0;
+}
+
+.accordion-item__title{
+    padding: 0 1rem;
+    margin-top: -1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title-icon{
+    width: 1.875rem;
+    height: 1.875rem;
+    background-image: url('./contents/plus.png');
+}
+
+
+.accordion-item__img{
+    display: none;
+    padding: .5rem;
+    margin: auto;
+    height: auto;
+    max-width: 80%;
+}
+.accordion-item__input:checked ~ .accordion-item__img {
+    display: block;
+    height: auto;
+    max-width: 80%;
+}
+
+.accordion-item__input:checked + .accordion-item__title .title-icon{
+    background-image: url('./contents/cross.png');
+    transition: background .2s ease;
+}
+
+
+@media (min-width: 320px){
+    @media (hover:hover) and (pointer:fine) {
+        label {
+            cursor: pointer;
+        }
+
+        .accordion-item:hover .accordion-item__img {
+            display: block;
+        }
+    }
+}
+
+@media (min-width: 820px) {
+    body {
+        font-size: 1.5rem;
+    }
+    .accordion {
+        max-width: 50vw;
+    }
+    .accordion-item__title {
+        margin-top: -1.5rem;
+    }
+    @media (hover:hover) and (pointer:fine){
+        label {
+            cursor: pointer;
+        }
+        .accordion-item:hover .accordion-item__img {
+            display: block;
+        }
+        .accordion-item {
+            color: rgb(0, 0, 255);
+        }
+
+        .accordion:hover .accordion-item {
+            color: black;
+        }
+
+        label:active {
+            opacity: .5;
+        }
+
+        label:active .accordion-item__title .title-text {
+            color: rgb(0, 0, 255);
+        }
+
+        .accordion-item__input:checked+.accordion-item__title {
+            color: black;
+        }
+    }
+}
+
+@media (min-width: 1920px) {
+    body{
+        min-height: 110vh;
+        font-size: 2rem;
+    }
+    .accordion{
+        max-width: 30vw;
+    }
+    label {
+        cursor: pointer;
+    }
+    .accordion-item {
+        color: rgb(0, 0, 255);
+    }
+
+    .accordion:hover .accordion-item{
+        color: black;
+    }
+
+    label:active{
+        opacity: .5;
+    }
+    label:active .accordion-item__title .title-text{
+        color: rgb(0, 0, 255);
+    }
+    .accordion-item__input:checked + .accordion-item__title{
+        color: black;
+    }
+
+    .accordion-item:hover .accordion-item__img {
+        display: block;
+        max-width: 60%;
+    }
+
+    .accordion-item__title{
+        margin-top: -2rem;
+    }
+
+    .accordion-item:hover .accordion-item__title .title-icon{
+        background-image: url('./contents/cross.png'); 
+    }
+    .accordion-item__input:checked~.accordion-item__img {
+        max-width: 60%;
+    }
+}
